@@ -2,8 +2,8 @@
 Description=Dummy API built in Kotlin using Spring Boot
 
 [Service]
-ExecStart=~/kotlin-dummy-api/start.sh
-ExecStop=~/kotlin-dummy-api/stop.sh
+ExecStart=/home/ec2-user/kotlin-dummy-api/start.sh
+ExecStop=/home/ec2-user/kotlin-dummy-api/stop.sh
 Restart=always
 RestartSec=1
 User=ec2-user

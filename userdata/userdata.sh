@@ -58,6 +58,4 @@ sudo mkdir /var/dummy-api
 update_api
 
 # Start
-create_service
-init_service
-    
+run_api

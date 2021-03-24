@@ -51,6 +51,7 @@
                 <configuration>
                     <finalName>dummy-api</finalName>
                     <outputDirectory>build</outputDirectory>
+                    <executable>true</executable>
                 </configuration>
             </plugin>
             <plugin>

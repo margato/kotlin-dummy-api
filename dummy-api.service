@@ -5,7 +5,7 @@ Description=Dummy API built in Kotlin using Spring Boot
 ExecStart=/var/dummy-api/dummy-api.jar
 Restart=on-failure
 User=ec2-user
-RestartSec=1
+RestartSec=60
 
 [Install]
 WantedBy=multi-user.target

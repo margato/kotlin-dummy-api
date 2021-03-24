@@ -1,0 +1,11 @@
+[Unit]
+Description=Dummy API built in Kotlin using Spring Boot
+
+[Service]
+ExecStart=~/kotlin-dummy-api/start.sh
+Restart=always
+RestartSec=1
+User=ec2-user
+
+[Install]
+WantedBy=multi-user.target

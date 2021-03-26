@@ -46,7 +46,6 @@ cd ~
 sudo git clone https://github.com/margato/kotlin-dummy-api
 sudo mkdir /var/dummy-api
 update_api
-forward_ports
 
 
 # sudo tail -10 /var/log/cloud-init-output.log

@@ -15,12 +15,10 @@ update_service() {
     sudo systemctl daemon-reload
     sudo chmod +x /var/dummy-api/dummy-api.jar
     sudo systemctl enable dummy-api
+    sudo systemctl stop dummy-api
+    sudo systemctl start dummy-api   
 }
 
-run_api() {
-    fuser -k 8080/tcp
-    sudo systemctl start dummy-api
-}
 ###########################################
 ################# Java 11 ################# 
 
@@ -42,20 +40,13 @@ export PATH=$M2:$PATH
 sudo yum install git -y
 
 ################### API ################### 
-# Port forwarding: 80 -> 8080
-# Port forwarding: 443 -> 8080
-sudo yum install iptables-services -y
-sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
-sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-ports 8080
-sudo systemctl enable iptables
-sudo systemctl start iptables
-sudo service iptables save
 
 # Clone API
 cd ~
 sudo git clone https://github.com/margato/kotlin-dummy-api
 sudo mkdir /var/dummy-api
 update_api
+forward_ports
 
-# Start
-run_api
+
+# sudo tail -10 /var/log/cloud-init-output.log

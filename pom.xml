@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>io.github.margato.aws</groupId>
-    <artifactId>dummyapi</artifactId>
+    <artifactId>dummy-api</artifactId>
     <version>1.0.0</version>
     <name>dummy-api</name>
     <description>Demo project to test AWS EC2</description>
@@ -48,11 +48,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <finalName>dummy-api</finalName>
-                    <outputDirectory>build</outputDirectory>
-                    <executable>true</executable>
-                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>

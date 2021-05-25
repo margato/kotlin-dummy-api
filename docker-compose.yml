@@ -1,0 +1,10 @@
+version: '2'
+services:
+  dummy-api:
+    container_name: dummy-api
+    build:
+      context: docker-dummy-api
+      dockerfile: Dockerfile
+    image: dummy-api:latest
+    ports:
+      - 8080:9090
